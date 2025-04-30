@@ -28,7 +28,7 @@ sudo apt-get install -y x11-xserver-utils git docker.io
 ###Paso 2: Construir imagen con docker
 
 ```bash
-docker build -t turtlebot3_slam:noetic .```
+docker build -t turtlebot3_slam:noetic .
 
 ###Paso 3: Ejecutar contenedor
 ```bash
@@ -39,7 +39,7 @@ docker run -it --privileged --net=host \
   -v $HOME/.ros:/root/.ros \
   -v $HOME/turtlebot3_ws:/root/catkin_ws \
   --name tb3_slam \
-  turtlebot3_slam:noetic```
+  turtlebot3_slam:noetic
 ###Paso 4: abrir contenedor y ejecutar
 ####1
 ```bash
