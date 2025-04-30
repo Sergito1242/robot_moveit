@@ -25,12 +25,12 @@ Para el punto 3 de este proyecto permite ejecutar una simulación completa del r
 sudo apt-get update
 sudo apt-get install -y x11-xserver-utils git docker.io
 ```
-###Paso 2: Construir imagen con docker
+### Paso 2: Construir imagen con docker
 
 ```bash
 docker build -t turtlebot3_slam:noetic .
 ```
-###Paso 3: Ejecutar contenedor
+### Paso 3: Ejecutar contenedor
 ```bash
 xhost +local:root
 docker run -it --privileged --net=host \
@@ -41,8 +41,8 @@ docker run -it --privileged --net=host \
   --name tb3_slam \
   turtlebot3_slam:noetic
 ```
-###Paso 4: abrir contenedor y ejecutar
-####1
+### Paso 4: abrir contenedor y ejecutar
+#### 1
 ```bash
 apt update
 apt install -y \
@@ -52,13 +52,13 @@ apt install -y \
   ros-noetic-turtlebot3-teleop \
   ros-noetic-gmapping
 ```
-####2
+#### 2
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
 ```
-###Paso 3: Ejecutar las terminales.
+### Paso 3: Ejecutar las terminales.
  terminal 1:```bash
 roslaunch turtlebot3_gazebo turtlebot3_world.launch```
 terminal 2: ```bash
