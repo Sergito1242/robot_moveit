@@ -23,35 +23,35 @@ Para el punto 3 de este proyecto permite ejecutar una simulación completa del r
 ### 1. Instalar dependencias
 ```bash
 sudo apt-get update
-sudo apt-get install -y x11-xserver-utils git docker.io
+sudo apt-get install -y x11-xserver-utils git docker.io```
 
 ###Paso 2: Construir imagen con docker
 
-docker build -t turtlebot3_slam:noetic .
+```docker build -t turtlebot3_slam:noetic .```
 
 ###Paso 3: Ejecutar contenedor
-xhost +local:root
+```xhost +local:root
 docker run -it --privileged --net=host \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v $HOME/.ros:/root/.ros \
   -v $HOME/turtlebot3_ws:/root/catkin_ws \
   --name tb3_slam \
-  turtlebot3_slam:noetic
+  turtlebot3_slam:noetic```
 ###Paso 4: abrir contenedor y ejecutar
 ####1
-apt update
+```apt update
 apt install -y \
   ros-noetic-turtlebot3-gazebo \
   ros-noetic-turtlebot3-slam \
   ros-noetic-turtlebot3-description \
   ros-noetic-turtlebot3-teleop \
-  ros-noetic-gmapping
+  ros-noetic-gmapping```
 ####2
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+```echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-source ~/.bashrc
+source ~/.bashrc```
 ###Paso 3: Ejecutar las terminales.
- terminal 1:roslaunch turtlebot3_gazebo turtlebot3_world.launch
-terminal 2: roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-terminal 3: roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+ terminal 1:```roslaunch turtlebot3_gazebo turtlebot3_world.launch```
+terminal 2: ```roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping```
+terminal 3: ```roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```
