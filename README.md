@@ -21,17 +21,17 @@ Para el punto 3 de este proyecto permite ejecutar una simulación completa del r
 ##  Configuración Inicial
 
 ### 1. Instalar dependencias
-```python
-# Esto es un bloque de código Python
-def hello():
-    print("Hola GitHub!")
+```
+sudo apt-get update
+sudo apt-get install -y x11-xserver-utils git docker.io
 ```
 ###Paso 2: Construir imagen con docker
 
 ```bash
 docker build -t turtlebot3_slam:noetic .
-´´´
-###Paso 3: Ejecutar contenedor```bash
+```
+###Paso 3: Ejecutar contenedor
+```bash
 xhost +local:root
 docker run -it --privileged --net=host \
   -e DISPLAY=$DISPLAY \
@@ -40,7 +40,7 @@ docker run -it --privileged --net=host \
   -v $HOME/turtlebot3_ws:/root/catkin_ws \
   --name tb3_slam \
   turtlebot3_slam:noetic
-´´´
+```
 ###Paso 4: abrir contenedor y ejecutar
 ####1
 ```bash
@@ -50,12 +50,14 @@ apt install -y \
   ros-noetic-turtlebot3-slam \
   ros-noetic-turtlebot3-description \
   ros-noetic-turtlebot3-teleop \
-  ros-noetic-gmapping```
+  ros-noetic-gmapping
+```
 ####2
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-source ~/.bashrc```
+source ~/.bashrc
+```
 ###Paso 3: Ejecutar las terminales.
  terminal 1:```bash
 roslaunch turtlebot3_gazebo turtlebot3_world.launch```
