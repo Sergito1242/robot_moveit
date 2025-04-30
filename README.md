@@ -23,7 +23,7 @@ Para el punto 3 de este proyecto permite ejecutar una simulación completa del r
 ### 1. Instalar dependencias
 ```bash
 sudo apt-get update
-sudo apt-get install -y x11-xserver-utils git docker.io```
+sudo apt-get install -y x11-xserver-utils git docker.io
 
 ###Paso 2: Construir imagen con docker
 
