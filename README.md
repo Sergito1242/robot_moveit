@@ -61,10 +61,13 @@ source ~/.bashrc
 ### Paso 3: Ejecutar las terminales.
 #### Terminal 1:
 ```bash
-roslaunch turtlebot3_gazebo turtlebot3_world.launch```
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
 #### Terminal 2: 
 ```bash
-roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping```
+roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+```
 #### Terminal 3:
  ```bash
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
