@@ -27,10 +27,12 @@ sudo apt-get install -y x11-xserver-utils git docker.io```
 
 ###Paso 2: Construir imagen con docker
 
-```docker build -t turtlebot3_slam:noetic .```
+```bash
+docker build -t turtlebot3_slam:noetic .```
 
 ###Paso 3: Ejecutar contenedor
-```xhost +local:root
+```bash
+xhost +local:root
 docker run -it --privileged --net=host \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -40,7 +42,8 @@ docker run -it --privileged --net=host \
   turtlebot3_slam:noetic```
 ###Paso 4: abrir contenedor y ejecutar
 ####1
-```apt update
+```bash
+apt update
 apt install -y \
   ros-noetic-turtlebot3-gazebo \
   ros-noetic-turtlebot3-slam \
@@ -48,10 +51,14 @@ apt install -y \
   ros-noetic-turtlebot3-teleop \
   ros-noetic-gmapping```
 ####2
-```echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+```bash
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc```
 ###Paso 3: Ejecutar las terminales.
- terminal 1:```roslaunch turtlebot3_gazebo turtlebot3_world.launch```
-terminal 2: ```roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping```
-terminal 3: ```roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```
+ terminal 1:```bash
+roslaunch turtlebot3_gazebo turtlebot3_world.launch```
+terminal 2: ```bash
+roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping```
+terminal 3: ```bash
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```
