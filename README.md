@@ -59,9 +59,12 @@ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
 ```
 ### Paso 3: Ejecutar las terminales.
- terminal 1:```bash
+#### terminal 1:
+```bash
 roslaunch turtlebot3_gazebo turtlebot3_world.launch```
-terminal 2: ```bash
+####terminal 2: 
+```bash
 roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping```
-terminal 3: ```bash
+####terminal 3:
+ ```bash
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```
