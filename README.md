@@ -21,16 +21,17 @@ Para el punto 3 de este proyecto permite ejecutar una simulación completa del r
 ##  Configuración Inicial
 
 ### 1. Instalar dependencias
-```bash
-sudo apt-get update
-sudo apt-get install -y x11-xserver-utils git docker.io
+```python
+# Esto es un bloque de código Python
+def hello():
+    print("Hola GitHub!")
+```
 ###Paso 2: Construir imagen con docker
 
 ```bash
 docker build -t turtlebot3_slam:noetic .
 ´´´
-###Paso 3: Ejecutar contenedor
-```bash
+###Paso 3: Ejecutar contenedor```bash
 xhost +local:root
 docker run -it --privileged --net=host \
   -e DISPLAY=$DISPLAY \
